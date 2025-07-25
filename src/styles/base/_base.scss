@@ -1,0 +1,18 @@
+@use '../utils/functions' as fn;
+
+body {
+  margin: 0;
+  font-family: fn.get-font('primary'), sans-serif;
+  color: fn.get-color('dark');
+  background-color: fn.get-color('light');
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
