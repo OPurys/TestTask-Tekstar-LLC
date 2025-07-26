@@ -1,0 +1,18 @@
+@use '../utils/functions' as fn;
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  font-weight: 700;
+  border-radius: 10px;
+  color: fn.get-color('light');
+  background-color: fn.get-color('blue-lavender');
+}
+
+.btn--md {
+  min-width: 90px;
+  column-gap: 8px;
+  font-size: 21px;
+}

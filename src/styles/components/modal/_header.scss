@@ -1,0 +1,35 @@
+@use '../../utils/placeholders';
+@use '../../utils/functions' as fn;
+
+.modal__header {
+  padding: 0 30px;
+  height: 69px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid fn.get-color('dark-gray');
+}
+
+.modal__icon {
+  stroke: fn.get-color('blue-lavender');
+  fill: fn.get-color('blue-lavender');
+}
+
+.modal__id {
+  @extend %title-text;
+}
+
+.modal__wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+
+  &-inner {
+    display: flex;
+    column-gap: 10px;
+    padding-top: 5px;
+    height: 40px;
+    padding-left: 20px;
+    border-left: 1px solid fn.get-color('blue-light');
+  }
+}

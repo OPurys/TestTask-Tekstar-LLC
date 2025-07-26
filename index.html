@@ -7,7 +7,39 @@
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="modal">
+      <!-- modal-header -->
+      <div class="modal__header">
+        <p class="modal__id">G112082</p>
+        <div class="modal__wrapper">
+          <button class="btn btn--md" type="button">
+            <img src="/edit.png" alt="edit" width="18" height="18" />Edit
+          </button>
+          <div class="modal__wrapper-inner">
+            <button type="button">
+              <svg class="modal__icon" width="30" height="30">
+                <use href="/svgsprite.svg#icon-arrow-prev"></use>
+              </svg>
+              <svg class="modal__icon" width="30" height="30">
+                <use href="/svgsprite.svg#icon-arrow-next"></use>
+              </svg>
+            </button>
+            <button type="button">
+              <svg class="modal__icon" width="30" height="30">
+                <use href="/svgsprite.svg#icon-maximize"></use>
+              </svg>
+            </button>
+            <button type="button">
+              <svg class="modal__icon" width="30" height="30">
+                <use href="/svgsprite.svg#icon-close"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- /.modal-header -->
+    </div>
+    <!-- JS -->
     <script type="module" src="src/ts/main.ts"></script>
   </body>
 </html>
