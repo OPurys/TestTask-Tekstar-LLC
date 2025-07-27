@@ -1,5 +1,18 @@
+@use 'functions' as fn;
+
 %title-text {
   font-weight: 700;
   font-size: 25px;
   text-transform: capitalize;
+}
+
+%product-label {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+%product-value {
+  font-family: fn.get-font('secondary');
+  font-weight: 600;
+  font-size: 22px;
 }
