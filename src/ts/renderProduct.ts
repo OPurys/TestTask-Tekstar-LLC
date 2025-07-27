@@ -1,8 +1,15 @@
 import type { Product } from '../types';
 import { buttonsIconMap, labelMap, linksIconMap } from './constants';
+import { renderEbay } from './renderEbay';
 import { renderLocation } from './renderLocation';
+import { renderSame } from './renderSame';
 
 export function renderProduct(data: Product): void {
+  const productId = document.getElementById('product-id');
+  if (!productId) return;
+
+  productId.textContent = data.id;
+
   const container = document.getElementById('products');
   if (!container) return;
 
@@ -66,4 +73,6 @@ export function renderProduct(data: Product): void {
   container.insertAdjacentHTML('beforeend', textListHTML + imageListHTML);
 
   renderLocation(data);
+  renderEbay(data);
+  renderSame(data);
 }

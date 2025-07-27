@@ -1,0 +1,80 @@
+@use '../../utils/placeholders';
+@use '../../utils/functions' as fn;
+
+.modal__ebay {
+  margin-bottom: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(fn.get-color('dark-gray'), 0.3);
+}
+
+.modal__ebay-title {
+  @extend %title-text;
+
+  margin-bottom: 15px;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.modal__ebay-quantity {
+  @extend %quantity;
+
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: rgba(fn.get-color('dark-gray'), 0.2);
+  opacity: 0.5;
+}
+
+.modal__ebay-table {
+  width: 100%;
+}
+
+.modal__ebay-thead {
+  border-top: 1px solid rgba(fn.get-color('dark-gray'), 0.3);
+  border-bottom: 1px solid rgba(fn.get-color('dark-gray'), 0.15);
+}
+
+.modal__ebay-header {
+  @extend %th;
+
+  padding: 0 20px;
+  height: 46px;
+  vertical-align: middle;
+
+  &:first-child {
+    padding-left: 30px;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  &:not(:last-child) {
+    border-right: 1px solid rgba(fn.get-color('dark-gray'), 0.15);
+  }
+}
+
+.modal__ebay-data-row {
+  border-bottom: 1px solid rgba(fn.get-color('dark-gray'), 0.15);
+}
+
+.modal__ebay-data {
+  @extend %product-label;
+
+  height: 44px;
+  padding: 0 20px;
+  vertical-align: middle;
+
+  &:first-child {
+    padding-left: 30px;
+  }
+
+  &:last-child {
+    padding-right: 30px;
+  }
+}

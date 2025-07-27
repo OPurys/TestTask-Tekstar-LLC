@@ -16,3 +16,17 @@
   column-gap: 8px;
   font-size: 21px;
 }
+
+.btn--sm {
+  min-width: 80px;
+  font-size: 20px;
+}
+
+.btn--lg {
+  min-width: 100px;
+  font-size: 20px;
+  font-weight: 400;
+  color: fn.get-color('dark');
+  background-color: transparent;
+  border: 1px solid fn.get-color('blue-lavender');
+}

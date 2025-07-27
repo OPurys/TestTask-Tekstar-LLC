@@ -8,67 +8,120 @@
   </head>
   <body>
     <div class="modal">
-      <!-- modal-header -->
-      <div class="modal__header">
-        <p class="modal__id">G112082</p>
-        <div class="modal__wrapper">
-          <button class="btn btn--md" type="button">
-            <svg width="18" height="18">
-              <use href="/svgsprite.svg#icon-edit"></use></svg
-            >Edit
-          </button>
-          <div class="modal__wrapper-inner">
-            <button type="button">
-              <svg class="modal__icon" width="30" height="30">
-                <use href="/svgsprite.svg#icon-arrow-prev"></use>
-              </svg>
-              <svg class="modal__icon" width="30" height="30">
-                <use href="/svgsprite.svg#icon-arrow-next"></use>
-              </svg>
+      <div class="modal__dialog">
+        <!-- modal-header -->
+        <div class="modal__header">
+          <p class="modal__id" id="product-id"></p>
+          <div class="modal__wrapper">
+            <button class="btn btn--md" type="button">
+              <svg width="18" height="18">
+                <use href="/svgsprite.svg#icon-edit"></use></svg
+              >Edit
             </button>
-            <button type="button">
-              <svg class="modal__icon" width="30" height="30">
-                <use href="/svgsprite.svg#icon-maximize"></use>
-              </svg>
-            </button>
-            <button type="button">
-              <svg class="modal__icon" width="30" height="30">
-                <use href="/svgsprite.svg#icon-close"></use>
-              </svg>
-            </button>
+            <div class="modal__wrapper-inner">
+              <button type="button">
+                <svg class="modal__icon" width="30" height="30">
+                  <use href="/svgsprite.svg#icon-arrow-prev"></use>
+                </svg>
+                <svg class="modal__icon" width="30" height="30">
+                  <use href="/svgsprite.svg#icon-arrow-next"></use>
+                </svg>
+              </button>
+              <button type="button">
+                <svg class="modal__icon" width="30" height="30">
+                  <use href="/svgsprite.svg#icon-maximize"></use>
+                </svg>
+              </button>
+              <button type="button">
+                <svg class="modal__icon" width="30" height="30">
+                  <use href="/svgsprite.svg#icon-close"></use>
+                </svg>
+              </button>
+            </div>
+            <!-- /.modal__wrapper-inner -->
           </div>
-          <!-- /.modal__wrapper-inner -->
+          <!-- /.modal__wrapper -->
         </div>
-        <!-- /.modal__wrapper -->
+        <!-- /.modal__header -->
+
+        <div class="modal__products" id="products"></div>
+
+        <!-- modal__location -->
+        <div class="modal__location" id="location">
+          <h2 class="modal__location-title">
+            list location
+            <span class="modal__location-quantity">6</span>
+          </h2>
+
+          <table class="modal__location-table">
+            <thead class="modal__location-thead">
+              <tr>
+                <th class="modal__location-header">ID</th>
+                <th class="modal__location-header">Brand</th>
+                <th class="modal__location-header">Category</th>
+                <th class="modal__location-header">Device P/N</th>
+                <th class="modal__location-header">Qty</th>
+                <th class="modal__location-header">Condition</th>
+                <th class="modal__location-header">Edit User</th>
+                <th class="modal__location-header">Notes</th>
+              </tr>
+            </thead>
+            <tbody id="location-tbody"></tbody>
+          </table>
+        </div>
+        <!-- /.modal__location -->
+
+        <!-- modal__ebay -->
+        <div class="modal__ebay" id="ebay">
+          <h2 class="modal__ebay-title">
+            list ebay vision listings
+            <span class="modal__ebay-quantity">53</span>
+          </h2>
+
+          <table class="modal__ebay-table">
+            <thead class="modal__ebay-thead">
+              <tr>
+                <th class="modal__ebay-header">Listing_id</th>
+                <th class="modal__ebay-header">SKU</th>
+                <th class="modal__ebay-header">condition_id</th>
+                <th class="modal__ebay-header">product_id</th>
+                <th class="modal__ebay-header">title</th>
+                <th class="modal__ebay-header">price</th>
+                <th class="modal__ebay-header">listing_qty</th>
+                <th class="modal__ebay-header">inventory_q</th>
+              </tr>
+            </thead>
+            <tbody id="ebay-tbody"></tbody>
+          </table>
+        </div>
+        <!-- /.modal__ebay -->
+
+        <!-- modal__same -->
+        <div class="modal__same" id="ebay">
+          <h2 class="modal__same-title">
+            same products
+            <span class="modal__same-quantity">1</span>
+          </h2>
+
+          <table class="modal__same-table">
+            <thead class="modal__same-thead">
+              <tr>
+                <th class="modal__same-header">Original_id</th>
+                <th class="modal__same-header">same_id</th>
+                <th class="modal__same-header">fk_edit_employee</th>
+              </tr>
+            </thead>
+            <tbody id="same-tbody"></tbody>
+          </table>
+
+          <div class="modal__same-wrapper">
+            <button class="btn btn--lg" type="button">Expand</button>
+            <button class="btn btn--sm" type="button">Add</button>
+          </div>
+        </div>
+        <!-- /.modal__same -->
       </div>
-      <!-- /.modal__header -->
-
-      <div class="modal__products" id="products"></div>
-
-      <!-- modal__location -->
-      <div class="modal__location" id="location">
-        <h2 class="modal__location-title">
-          list location
-          <span class="modal__location-quantity">6</span>
-        </h2>
-
-        <table class="modal__location-table">
-          <thead class="modal__location-thead">
-            <tr>
-              <th class="modal__location-header">ID</th>
-              <th class="modal__location-header">Brand</th>
-              <th class="modal__location-header">Category</th>
-              <th class="modal__location-header">Device P/N</th>
-              <th class="modal__location-header">Gty</th>
-              <th class="modal__location-header">Condition</th>
-              <th class="modal__location-header">Edit User</th>
-              <th class="modal__location-header">Notes</th>
-            </tr>
-          </thead>
-          <tbody id="location-tbody"></tbody>
-        </table>
-      </div>
-      <!-- /.modal__location -->
+      <!-- /.modal__dialog -->
     </div>
     <!-- /.modal -->
 

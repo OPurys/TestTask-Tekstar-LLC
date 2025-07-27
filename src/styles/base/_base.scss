@@ -5,6 +5,8 @@ body {
   font-family: fn.get-font('primary'), sans-serif;
   color: fn.get-color('dark');
   background-color: fn.get-color('light');
+
+  overflow: hidden;
 }
 
 button {
