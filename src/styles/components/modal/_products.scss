@@ -44,7 +44,7 @@
   align-items: center;
   justify-content: space-between;
   border-radius: 10px;
-  box-shadow: 0 0 2px 0 fn.get-color('lavender-mist');
+  box-shadow: 0 0 2px 0 rgba(fn.get-color('dark-gray'), 0.25);
 
   &:nth-child(n + 12) {
     grid-column: 2;
@@ -58,7 +58,7 @@
 .modal__products-image {
   margin-top: 14px;
   border-radius: 30px;
-  box-shadow: 2px 2px 4px 0 fn.get-color('dusty-blue');
+  box-shadow: 2px 2px 4px 0 rgba(fn.get-color('dark-gray'), 0.1);
 }
 
 .modal__products-label {

@@ -1,5 +1,6 @@
 import type { Product } from '../types';
 import { buttonsIconMap, labelMap, linksIconMap } from './constants';
+import { renderLocation } from './renderLocation';
 
 export function renderProduct(data: Product): void {
   const container = document.getElementById('products');
@@ -63,4 +64,6 @@ export function renderProduct(data: Product): void {
   imageListHTML += '</ul>';
 
   container.insertAdjacentHTML('beforeend', textListHTML + imageListHTML);
+
+  renderLocation(data);
 }

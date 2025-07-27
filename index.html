@@ -37,12 +37,41 @@
               </svg>
             </button>
           </div>
+          <!-- /.modal__wrapper-inner -->
         </div>
+        <!-- /.modal__wrapper -->
       </div>
-      <!-- /.modal-header -->
+      <!-- /.modal__header -->
 
       <div class="modal__products" id="products"></div>
+
+      <!-- modal__location -->
+      <div class="modal__location" id="location">
+        <h2 class="modal__location-title">
+          list location
+          <span class="modal__location-quantity">6</span>
+        </h2>
+
+        <table class="modal__location-table">
+          <thead class="modal__location-thead">
+            <tr>
+              <th class="modal__location-header">ID</th>
+              <th class="modal__location-header">Brand</th>
+              <th class="modal__location-header">Category</th>
+              <th class="modal__location-header">Device P/N</th>
+              <th class="modal__location-header">Gty</th>
+              <th class="modal__location-header">Condition</th>
+              <th class="modal__location-header">Edit User</th>
+              <th class="modal__location-header">Notes</th>
+            </tr>
+          </thead>
+          <tbody id="location-tbody"></tbody>
+        </table>
+      </div>
+      <!-- /.modal__location -->
     </div>
+    <!-- /.modal -->
+
     <!-- JS -->
     <script type="module" src="src/ts/main.ts"></script>
   </body>

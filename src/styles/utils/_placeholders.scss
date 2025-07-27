@@ -16,3 +16,15 @@
   font-weight: 600;
   font-size: 22px;
 }
+
+%quantity {
+  font-weight: 700;
+  font-size: 15px;
+  color: fn.get-color('blue-gray');
+}
+
+%th {
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: capitalize;
+}
