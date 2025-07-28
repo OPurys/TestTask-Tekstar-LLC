@@ -1,5 +1,6 @@
 @use '../../utils/placeholders';
 @use '../../utils/functions' as fn;
+@use '../../utils/mixins' as mx;
 
 .modal__ebay {
   margin-bottom: 30px;
@@ -11,27 +12,61 @@
   @extend %title-text;
 
   margin-bottom: 15px;
-  padding-left: 30px;
+  padding-left: 10px;
   display: flex;
   align-items: center;
-  column-gap: 15px;
+  column-gap: 10px;
+
+  @include mx.respond-to('md') {
+    padding-left: 20px;
+    column-gap: 12px;
+  }
+
+  @include mx.respond-to('lg') {
+    padding-left: 30px;
+    column-gap: 15px;
+  }
 }
 
 .modal__ebay-quantity {
   @extend %quantity;
 
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   background-color: rgba(fn.get-color('dark-gray'), 0.2);
   opacity: 0.5;
+
+  @include mx.respond-to('md') {
+    width: 20px;
+    height: 20px;
+  }
+
+  @include mx.respond-to('lg') {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.modal__ebay-wrapper {
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(fn.get-color('dark-gray'), 0.2);
+    border-radius: 3px;
+  }
 }
 
 .modal__ebay-table {
   width: 100%;
+  min-width: 623px;
 }
 
 .modal__ebay-thead {
@@ -42,12 +77,22 @@
 .modal__ebay-header {
   @extend %th;
 
-  padding: 0 20px;
-  height: 46px;
+  padding: 0 10px;
+  height: 36px;
   vertical-align: middle;
 
-  &:first-child {
-    padding-left: 30px;
+  @include mx.respond-to('md') {
+    padding: 0 15px;
+    height: 40px;
+  }
+
+  @include mx.respond-to('lg') {
+    padding: 0 20px;
+    height: 46px;
+
+    &:first-child {
+      padding-left: 30px;
+    }
   }
 
   &:last-child {
@@ -66,15 +111,25 @@
 .modal__ebay-data {
   @extend %product-label;
 
-  height: 44px;
-  padding: 0 20px;
+  height: 34px;
+  padding: 0 10px;
   vertical-align: middle;
 
-  &:first-child {
-    padding-left: 30px;
+  @include mx.respond-to('md') {
+    padding: 0 15px;
+    height: 38px;
   }
 
-  &:last-child {
-    padding-right: 30px;
+  @include mx.respond-to('lg') {
+    padding: 0 20px;
+    height: 44px;
+
+    &:first-child {
+      padding-left: 30px;
+    }
+
+    &:last-child {
+      padding-right: 30px;
+    }
   }
 }

@@ -2,23 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>TestTask/TekstarLLC</title>
   </head>
   <body>
     <div class="modal">
       <div class="modal__dialog">
         <!-- modal-header -->
         <div class="modal__header">
-          <p class="modal__id" id="product-id"></p>
-          <div class="modal__wrapper">
+          <p class="modal__header-id" id="product-id"></p>
+          <div class="modal__header-wrapper">
             <button class="btn btn--md" type="button">
-              <svg width="18" height="18">
+              <svg class="modal__icon modal__icon--sm" width="18" height="18">
                 <use href="/svgsprite.svg#icon-edit"></use></svg
               >Edit
             </button>
-            <div class="modal__wrapper-inner">
+            <div class="modal__header-wrapper-inner">
               <button type="button">
                 <svg class="modal__icon" width="30" height="30">
                   <use href="/svgsprite.svg#icon-arrow-prev"></use>
@@ -53,21 +53,24 @@
             <span class="modal__location-quantity">6</span>
           </h2>
 
-          <table class="modal__location-table">
-            <thead class="modal__location-thead">
-              <tr>
-                <th class="modal__location-header">ID</th>
-                <th class="modal__location-header">Brand</th>
-                <th class="modal__location-header">Category</th>
-                <th class="modal__location-header">Device P/N</th>
-                <th class="modal__location-header">Qty</th>
-                <th class="modal__location-header">Condition</th>
-                <th class="modal__location-header">Edit User</th>
-                <th class="modal__location-header">Notes</th>
-              </tr>
-            </thead>
-            <tbody id="location-tbody"></tbody>
-          </table>
+          <div class="modal__location-wrapper">
+            <table class="modal__location-table">
+              <thead class="modal__location-thead">
+                <tr>
+                  <th class="modal__location-header">ID</th>
+                  <th class="modal__location-header">Brand</th>
+                  <th class="modal__location-header">Category</th>
+                  <th class="modal__location-header">Device P/N</th>
+                  <th class="modal__location-header">Qty</th>
+                  <th class="modal__location-header">Condition</th>
+                  <th class="modal__location-header">Edit User</th>
+                  <th class="modal__location-header">Notes</th>
+                </tr>
+              </thead>
+              <tbody id="location-tbody"></tbody>
+            </table>
+          </div>
+          <!-- /.modal__location-wrapper -->
         </div>
         <!-- /.modal__location -->
 
@@ -78,21 +81,24 @@
             <span class="modal__ebay-quantity">53</span>
           </h2>
 
-          <table class="modal__ebay-table">
-            <thead class="modal__ebay-thead">
-              <tr>
-                <th class="modal__ebay-header">Listing_id</th>
-                <th class="modal__ebay-header">SKU</th>
-                <th class="modal__ebay-header">condition_id</th>
-                <th class="modal__ebay-header">product_id</th>
-                <th class="modal__ebay-header">title</th>
-                <th class="modal__ebay-header">price</th>
-                <th class="modal__ebay-header">listing_qty</th>
-                <th class="modal__ebay-header">inventory_q</th>
-              </tr>
-            </thead>
-            <tbody id="ebay-tbody"></tbody>
-          </table>
+          <div class="modal__ebay-wrapper">
+            <table class="modal__ebay-table">
+              <thead class="modal__ebay-thead">
+                <tr>
+                  <th class="modal__ebay-header">Listing_id</th>
+                  <th class="modal__ebay-header">SKU</th>
+                  <th class="modal__ebay-header">condition_id</th>
+                  <th class="modal__ebay-header">product_id</th>
+                  <th class="modal__ebay-header">title</th>
+                  <th class="modal__ebay-header">price</th>
+                  <th class="modal__ebay-header">listing_qty</th>
+                  <th class="modal__ebay-header">inventory_q</th>
+                </tr>
+              </thead>
+              <tbody id="ebay-tbody"></tbody>
+            </table>
+          </div>
+          <!-- /.modal__ebay-wrapper -->
         </div>
         <!-- /.modal__ebay -->
 

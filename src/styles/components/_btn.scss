@@ -1,32 +1,73 @@
 @use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
 
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  height: 30px;
   font-weight: 700;
   border-radius: 10px;
   color: fn.get-color('light');
   background-color: fn.get-color('blue-lavender');
+
+  @include mx.respond-to('md') {
+    height: 34px;
+  }
+
+  @include mx.respond-to('lg') {
+    height: 40px;
+  }
 }
 
 .btn--md {
-  min-width: 90px;
-  column-gap: 8px;
-  font-size: 21px;
+  min-width: 50px;
+  column-gap: 4px;
+  font-size: 13px;
+
+  @include mx.respond-to('md') {
+    min-width: 70px;
+    column-gap: 6px;
+    font-size: 18px;
+  }
+
+  @include mx.respond-to('lg') {
+    min-width: 90px;
+    column-gap: 8px;
+    font-size: 21px;
+  }
 }
 
 .btn--sm {
-  min-width: 80px;
-  font-size: 20px;
+  min-width: 45px;
+  font-size: 12px;
+
+  @include mx.respond-to('md') {
+    min-width: 60px;
+    font-size: 16px;
+  }
+
+  @include mx.respond-to('lg') {
+    min-width: 80px;
+    font-size: 20px;
+  }
 }
 
 .btn--lg {
-  min-width: 100px;
-  font-size: 20px;
+  min-width: 60px;
+  font-size: 12px;
   font-weight: 400;
   color: fn.get-color('dark');
   background-color: transparent;
   border: 1px solid fn.get-color('blue-lavender');
+
+  @include mx.respond-to('md') {
+    min-width: 80px;
+    font-size: 16px;
+  }
+
+  @include mx.respond-to('lg') {
+    min-width: 100px;
+    font-size: 20px;
+  }
 }

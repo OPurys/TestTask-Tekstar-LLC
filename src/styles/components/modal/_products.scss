@@ -1,53 +1,112 @@
 @use '../../utils/placeholders';
 @use '../../utils/functions' as fn;
+@use '../../utils/mixins' as mx;
 
 .modal__products {
   margin-bottom: 30px;
-  padding: 0 30px;
-  display: flex;
-  column-gap: 35px;
+  padding: 0 10px;
+
+  @include mx.respond-to('md') {
+    padding: 0 15px;
+  }
+
+  @include mx.respond-to('lg') {
+    display: flex;
+    column-gap: 25px;
+  }
+
+  @include mx.respond-to('xl') {
+    display: flex;
+    column-gap: 35px;
+  }
 }
 
 .modal__products-list {
+  margin-bottom: 15px;
+  width: 100%;
   max-width: 1195px;
   position: relative;
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(2, 575px);
-  gap: 10px 30px;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 590px;
-    width: 1px;
-    background-color: fn.get-color('blue-light');
+  @include mx.respond-to('lg') {
+    margin-bottom: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: -15px;
-    width: 1px;
-    background-color: fn.get-color('blue-light');
+  @include mx.respond-to('xl') {
+    grid-template-columns: repeat(2, 575px);
+    column-gap: 30px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 590px;
+      width: 1px;
+      background-color: fn.get-color('blue-light');
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -15px;
+      width: 1px;
+      background-color: fn.get-color('blue-light');
+    }
   }
 }
 
 .modal__products-item {
-  height: 40px;
-  padding: 0 20px;
+  height: 30px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 10px;
   box-shadow: 0 0 2px 0 rgba(fn.get-color('dark-gray'), 0.25);
 
+  &:not(:last-child) {
+    margin-bottom: 10px;
+
+    @include mx.respond-to('lg') {
+      margin-bottom: 0;
+    }
+  }
+
+  @include mx.respond-to('md') {
+    padding: 0 15px;
+    height: 36px;
+  }
+
+  @include mx.respond-to('lg') {
+    margin-bottom: 0;
+    padding: 0 20px;
+    height: 40px;
+  }
+
   &:nth-child(n + 12) {
     grid-column: 2;
+  }
+}
+
+.modal__products-images-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  @include mx.respond-to('md') {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  @include mx.respond-to('lg') {
+    display: block;
   }
 }
 
@@ -63,6 +122,19 @@
 
 .modal__products-label {
   @extend %product-label;
+
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  @include mx.respond-to('lg') {
+    width: 150px;
+  }
+
+  @include mx.respond-to('lg') {
+    width: auto;
+  }
 }
 
 .modal__products-value {
@@ -70,14 +142,38 @@
 
   display: flex;
   align-items: center;
-  column-gap: 15px;
+  column-gap: 8px;
+
+  @include mx.respond-to('md') {
+    column-gap: 12px;
+  }
+
+  @include mx.respond-to('lg') {
+    column-gap: 15px;
+  }
 
   &:not(:has(a)):not(:has(button)) {
-    padding-right: 40px;
+    padding-right: 23px;
+
+    @include mx.respond-to('md') {
+      column-gap: 30px;
+    }
+
+    @include mx.respond-to('lg') {
+      column-gap: 40px;
+    }
   }
 
   &:has(a) {
-    font-size: 18px;
+    font-size: 12px;
+
+    @include mx.respond-to('md') {
+      font-size: 14px;
+    }
+
+    @include mx.respond-to('lg') {
+      font-size: 18px;
+    }
   }
 }
 

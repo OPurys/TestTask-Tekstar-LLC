@@ -1,0 +1,14 @@
+@use 'sass:map';
+
+@use 'variables' as var;
+
+@mixin respond-to($breakpoint) {
+  $value: map.get(var.$breakpoints, $breakpoint);
+  @if $value {
+    @media only screen and (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @error '';
+  }
+}

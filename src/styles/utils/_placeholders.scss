@@ -1,30 +1,71 @@
 @use 'functions' as fn;
+@use 'mixins' as mx;
 
 %title-text {
   font-weight: 700;
-  font-size: 25px;
+  font-size: 18px;
   text-transform: capitalize;
+
+  @include mx.respond-to('md') {
+    font-size: 20px;
+  }
+
+  @include mx.respond-to('lg') {
+    font-size: 25px;
+  }
 }
 
 %product-label {
-  font-size: 20px;
+  font-size: 12px;
   text-transform: capitalize;
+
+  @include mx.respond-to('md') {
+    font-size: 14px;
+  }
+
+  @include mx.respond-to('lg') {
+    font-size: 20px;
+  }
 }
 
 %product-value {
   font-family: fn.get-font('secondary');
   font-weight: 600;
-  font-size: 22px;
+  font-size: 12px;
+
+  @include mx.respond-to('md') {
+    font-size: 14px;
+  }
+
+  @include mx.respond-to('lg') {
+    font-size: 22px;
+  }
 }
 
 %quantity {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 10px;
   color: fn.get-color('blue-gray');
+
+  @include mx.respond-to('md') {
+    font-size: 12px;
+  }
+
+  @include mx.respond-to('lg') {
+    font-size: 15px;
+  }
 }
 
 %th {
   font-weight: 700;
-  font-size: 22px;
+  font-size: 14px;
   text-transform: capitalize;
+
+  @include mx.respond-to('md') {
+    font-size: 16px;
+  }
+
+  @include mx.respond-to('lg') {
+    font-size: 22px;
+  }
 }

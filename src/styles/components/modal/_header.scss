@@ -1,36 +1,55 @@
 @use '../../utils/placeholders';
 @use '../../utils/functions' as fn;
+@use '../../utils/mixins' as mx;
 
 .modal__header {
   margin-bottom: 20px;
-  padding: 0 30px;
-  height: 69px;
+  padding: 10px 15px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+
   border-bottom: 1px solid rgba(fn.get-color('dark-gray'), 0.15);
+
+  @include mx.respond-to('md') {
+    padding: 0 30px;
+    height: 69px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
-.modal__icon {
-  stroke: fn.get-color('blue-lavender');
-  fill: fn.get-color('blue-lavender');
-}
-
-.modal__id {
+.modal__header-id {
   @extend %title-text;
+  margin-bottom: 10px;
+  text-align: center;
+
+  @include mx.respond-to('md') {
+    margin-bottom: 0;
+    text-align: left;
+  }
 }
 
-.modal__wrapper {
+.modal__header-wrapper {
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  column-gap: 10px;
+
+  @include mx.respond-to('md') {
+    column-gap: 20px;
+  }
 
   &-inner {
     display: flex;
-    column-gap: 10px;
-    padding-top: 5px;
-    height: 40px;
-    padding-left: 20px;
+    column-gap: 6px;
+    height: 30px;
+    padding-left: 10px;
     border-left: 1px solid fn.get-color('blue-light');
+
+    @include mx.respond-to('md') {
+      height: 40px;
+      padding-left: 20px;
+      column-gap: 10px;
+    }
   }
 }

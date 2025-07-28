@@ -17,7 +17,7 @@ export interface EbayListing {
   title: string;
   price: number;
   listing_qty: number;
-  inventory_qty: number;
+  inventory_qty: string;
 }
 
 export interface SameProduct {

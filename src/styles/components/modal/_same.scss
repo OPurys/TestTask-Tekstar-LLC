@@ -1,9 +1,9 @@
 @use '../../utils/placeholders';
 @use '../../utils/functions' as fn;
+@use '../../utils/mixins' as mx;
 
 .modal__same {
   padding-top: 15px;
-  padding-bottom: 30px;
   border-top: 1px solid rgba(fn.get-color('dark-gray'), 0.3);
 }
 
@@ -11,22 +11,42 @@
   @extend %title-text;
 
   margin-bottom: 15px;
-  padding-left: 30px;
+  padding-left: 10px;
   display: flex;
   align-items: center;
   column-gap: 15px;
+
+  @include mx.respond-to('md') {
+    padding-left: 20px;
+    column-gap: 12px;
+  }
+
+  @include mx.respond-to('lg') {
+    padding-left: 30px;
+    column-gap: 15px;
+  }
 }
 
 .modal__same-quantity {
   @extend %quantity;
 
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   background-color: rgba(fn.get-color('dark-gray'), 0.2);
+
+  @include mx.respond-to('md') {
+    width: 20px;
+    height: 20px;
+  }
+
+  @include mx.respond-to('lg') {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .modal__same-table {
@@ -42,12 +62,32 @@
 .modal__same-header {
   @extend %th;
 
-  padding: 0 20px;
-  height: 46px;
+  padding: 0 10px;
+  height: 36px;
   vertical-align: middle;
 
-  &:first-child {
-    padding-left: 30px;
+  @include mx.respond-to('md') {
+    padding: 0 15px;
+    height: 40px;
+  }
+
+  @include mx.respond-to('lg') {
+    padding: 0 20px;
+    height: 46px;
+
+    &:first-child {
+      padding-left: 30px;
+    }
+
+    &:last-child {
+      padding-right: 30px;
+      width: 100vw;
+      max-width: 900px;
+
+      @include mx.respond-to('xl') {
+        max-width: 1191px;
+      }
+    }
   }
 
   &:last-child {
@@ -67,28 +107,51 @@
 .modal__same-data {
   @extend %product-label;
 
-  height: 44px;
-  padding: 0 20px;
+  height: 34px;
+  padding: 0 10px;
   vertical-align: middle;
 
-  &:first-child {
-    padding-left: 30px;
-  }
-
   &:last-child {
-    padding-right: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
+  @include mx.respond-to('md') {
+    padding: 0 15px;
+    height: 38px;
+  }
+
+  @include mx.respond-to('lg') {
+    padding: 0 20px;
+    height: 44px;
+
+    &:first-child {
+      padding-left: 30px;
+    }
+
+    &:last-child {
+      padding-right: 30px;
+    }
+  }
 }
 
 .modal__same-wrapper {
-  padding-right: 30px;
+  padding-right: 10px;
   display: flex;
   align-items: center;
   justify-content: right;
-  gap: 15px;
+  gap: 10px;
+
+  @include mx.respond-to('md') {
+    padding-right: 15px;
+    gap: 12px;
+  }
+
+  @include mx.respond-to('lg') {
+    padding-right: 35px;
+    gap: 15px;
+  }
 }
 
 .modal__same-btn {
